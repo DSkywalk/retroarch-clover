@@ -30,6 +30,7 @@ Please note:
 ## Additional information
 
 Executables and arguments for all available cores:
+
         - /bin/cpc <rom> <clover_args>
           runs "caprice32" core
         - /bin/zx <rom> <clover_args>
