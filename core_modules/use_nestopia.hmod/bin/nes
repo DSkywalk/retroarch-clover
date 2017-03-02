@@ -1,9 +1,0 @@
-#!/bin/sh
-filename="$1"
-extension="${filename##*.}"
-crt=--ra-allow-crt
-if [ "$extension" == "fds" ] || [ "$extension" == "qd" ]; then
-  crt=0
-fi
-
-exec retroarch-clover nestopia "$@" $crt
