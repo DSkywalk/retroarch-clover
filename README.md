@@ -36,7 +36,7 @@ Executables and arguments for all available cores:
           runs "caprice32" core
         - /bin/zx <rom> <clover_args>
           runs "fuse" core
-        - /bin/mame2003_mini <rom> <clover_args>
+        - /bin/mame2003 <rom> <clover_args>
           runs "mame2003 minimized" core
         - /bin/pcsx <rom> <clover_args>
           runs "pcsx_rearmed" core
@@ -47,12 +47,10 @@ Executables and arguments for all available cores:
 - It's recommended to turn your NES Mini off from shell, not during the game
 
 ## Credits
-Repo Cores by D_Skywalk
-
 NES Mini port by madmonkey
 
-NES Mini shell integration by Cluster
+NES Mini shell integration by Cluster. Various additions, tweaks and fixes by pcm720
 
-Various additions, tweaks and fixes by pcm720
+This Repo Cores are built and modded by D_Skywalk
 
 RetroArch/libretro project: https://www.libretro.com
