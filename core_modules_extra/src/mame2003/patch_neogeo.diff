@@ -1,0 +1,52 @@
+diff --git a/src/libretro/osd.c b/src/libretro/osd.c
+index 5970724..d876c17 100644
+--- a/src/libretro/osd.c
++++ b/src/libretro/osd.c
+@@ -254,6 +254,17 @@ int osd_get_path_info(int pathtype, int pathindex, const char *filename)
+ 	if (stat(buffer, &statbuf) == 0)
+ 		return (S_ISDIR(statbuf.st_mode)) ? PATH_IS_DIRECTORY : PATH_IS_FILE;
+ 
++#ifdef NEOBIOSPATH
++	if(strcmp("neogeo.zip", filename)==0){
++	    snprintf(buffer, 1024, "%s%c%s", NEOBIOSPATH, slash, filename);
++	    if (stat(buffer, &statbuf) == 0)
++		    return (S_ISDIR(statbuf.st_mode)) ? PATH_IS_DIRECTORY : PATH_IS_FILE;
++    }
++
++	if (stat(buffer, &statbuf) == 0)
++		return (S_ISDIR(statbuf.st_mode)) ? PATH_IS_DIRECTORY : PATH_IS_FILE;
++#endif
++
+ 	return PATH_NOT_FOUND;
+ }
+ 
+@@ -302,12 +313,23 @@ osd_file *osd_fopen(int pathtype, int pathindex, const char *filename, const cha
+ 
+ 	out->file = fopen(buffer, mode);
+ 
+-	if (out->file == 0)
+-	{
+-		free(out);
+-		return 0;
+-	}
+-	return out;
++	if (out->file)
++	    return out;
++
++#ifdef NEOBIOSPATH
++	if(strcmp("neogeo.zip", filename)==0){
++	    snprintf(buffer, 1024, "%s%c%s", NEOBIOSPATH, slash, filename);
++	    out = (osd_file*)malloc(sizeof(osd_file));
++
++	    out->file = fopen(buffer, mode);
++
++	    if (out->file)
++	        return out;
++    }
++#endif
++
++	free(out);
++	return 0;
+ }
+ 
+ int osd_fseek(osd_file *file, INT64 offset, int whence)
