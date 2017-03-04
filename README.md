@@ -7,7 +7,7 @@ It will automatically detect unsupported NES games and run them instead of the d
 It can also run games for other consoles. This pack already contains my following cores:
 - caprice32 (Amstrad CPC) - changes at: https://github.com/DSkywalk/libretro-cap32
 - fuse (ZX Spectrum)
-- mame2003_mini (various arcades machines)
+- mame2003_mini (various arcades machines) gamelist: http://bit.ly/skyMAME2003
 - pcsx_rearmed (Sony PlayStation)
 
 ## How to use this
