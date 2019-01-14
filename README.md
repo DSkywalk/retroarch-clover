@@ -5,7 +5,7 @@ This is a hakchi/hakchi2 module which adds libretro cores and RetroArch front-en
 It will automatically detect unsupported NES games and run them instead of the default emulator. Save states will work as usual.
 
 It can also run games for other consoles. This pack already contains my following cores:
-- caprice32 (Amstrad CPC) - changes at: https://github.com/DSkywalk/libretro-cap32
+- caprice32 (Amstrad CPC) - changes at: https://github.com/DSkywalk/libretro-cap32-mod_mini
 - fuse (ZX Spectrum)
 - mame2003_mini (various arcades machines) gamelist: http://bit.ly/skyMAME2003
 - pcsx_rearmed (Sony PlayStation)
